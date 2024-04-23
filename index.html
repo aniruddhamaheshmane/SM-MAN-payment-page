@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +25,7 @@
         }
 
         #section_A{
-            border: 2PX solid rgb(255, 0, 0);
+            border: 2PX solid rgb(252, 45, 30);
             opacity: 1;
           padding: 10px;
           
@@ -66,6 +67,7 @@ font-weight: 1000;
         }
         #name,#address{
             padding: 5px;
+            
         }
 
         option{
@@ -98,7 +100,15 @@ padding: 4px;
 border: 2px solid;
 padding: 4px;
         }
-    
+        #transaction_id{
+            height: 20px;
+            padding: 5px;
+            margin-left: 5px;
+        }
+    #colour_change{
+        color: rgb(255, 255, 255);
+        font-weight: 1000;
+    }
     </style>
 </head>
 <body>
@@ -118,12 +128,12 @@ padding: 4px;
 
     <p>full address- <input id="address" type="text"></p></p>
 
-    <button class="button" onclick="section_A()">"submit persanal information"</button>
+    <button id="hide_procede_tp_payment_btn_1" class="button" onclick="section_A()">"submit persanal information"</button>
 </div>
 
 
 <div id="section_B">
-    <select name="" id="product-name" onchange="alert(this.options[this.selectedIndex].text)">
+    <select name="" id="product-name" onchange="alert(`${name_of_custemer.value} you select  ${this.options[this.selectedIndex].text} is conform to proceed `)">
         <option  value="00" >select product</option>
         <option  value="85" >ESSA underwere 90CM </option>
    <option  value="90">ESSA underwere 95CM</option>
@@ -164,7 +174,7 @@ padding: 4px;
     <option value="12">12  pieces</option>
 </select>
 
-<button class="button"  onclick="section_B()">procede to payment</button>
+<button class="button" id="hide_procede_tp_payment_btn" onclick="section_B()">procede to payment</button>
 
 </div>
 
@@ -174,13 +184,13 @@ padding: 4px;
 <!-- <p id="demo"></p> -->
 <p id="qr_info">B</p>
 <img id="qr" src="qr.jpg" alt="">
-<p class="big_font">enter transactiion id last 4 digit<input id="transaction_id" value="" type="text"></p>
+<p id="colour_change" class="big_font">enter transactiion id last 4 digit<input id="transaction_id" value="" type="text"></p>
 <BUtton class="button"  onclick="section_C()">submit payment data and previwe </BUtton>
 </div>
 
 <div id="section_D">
     <p id="final-peiv"></p>
-    <button class="button"  id="get-bill">click submit via whatsap</button>
+    <button class="button" id="hide_procede_tp_payment_btn_2" id="get-bill">click submit via whatsap</button>
 </div>
 
 
@@ -214,7 +224,7 @@ if ( document.getElementById("name").value == ``||null) {
     document.getElementById("address").disabled = true};
 
 
-    alert( document.getElementById("name").value + " your name and addres is save please order product"+  " " + "minimum orde quntity is 4 ,5, 8 , 12 pieces")
+    alert( document.getElementById("name").value +" "+"Thank you" + " your name and addres is save ; please fill product details")
    
   sec_b.style.opacity = 1;
   
@@ -249,9 +259,15 @@ let transactionid = document.getElementById("transaction_id").value
 
 document.getElementById("qr_info").innerHTML = `<h1>Product Payment summary </h1>
 <br>
-one ${name_product_name} prize is = ${ONE_PRODUCT_PRIZE} 
+    product name = ${name_product_name}
   <br>
-   get discount is = 20%
+  get discount is = 20%
+  <br>
+    product quantity = ${output2}
+  <br>
+one ${name_product_name} prize is = ${ONE_PRODUCT_PRIZE} 
+  
+  
    <br>
 <h2>total ${output2} product prise is =${output1 * output2}</h2>
 
@@ -259,7 +275,27 @@ one ${name_product_name} prize is = ${ONE_PRODUCT_PRIZE}
 
 
    sec_c.style.opacity = 1;
-   
+  
+   alert(`${name_of_custemer} you order is = ${name_product_name}
+    get discount is = 20% 
+    one ${name_product_name} prize is = ${ONE_PRODUCT_PRIZE}
+    product quantity = ${output2}
+    total ${output2} product prise is =${output1 * output2}
+    scan following QR code to payment = ${output1 * output2}
+    and node down the payment transaction id last 4 digit`)
+
+
+setInterval(() => {
+   console.log("a")
+    document.getElementById("colour_change").style.backgroundColor = "rgb(235, 69, 57)"
+}, 1000);
+setInterval(() => {
+   console.log("a")
+    document.getElementById("colour_change").style.backgroundColor = "rgb(84, 57, 235)"
+}, 2000);
+
+
+
 };
 
 function section_C(){
@@ -286,17 +322,37 @@ let name_product_name = select.options[select.selectedIndex].text ; //returns th
 document.getElementById("final-peiv").innerHTML = 
   `<h1>order final bill </h1>  
   <br><line>
-  Name of custemer = ${name_of_custemer.value} <br> address = ${full_address.value} <br> ${name_product_name} 
+  Name of custemer = ${name_of_custemer.value} 
+  <br>
+   address = ${full_address.value}
+    <br>
+    product name = ${name_product_name} 
+    <br>
+    product quantity = ${output2}
   <br>
   one ${select.options[select.selectedIndex].text} prize is = ${ONE_PRODUCT_PRIZE} 
   <br>
    get discount is = 20%
    <br>
    total ${output2} product prise is = ${output1 * output2} <br>
-   transaction id = ${transactionid}`;
+   transaction id = XXXXXXXX${transactionid}`;
 
-
+   sec_c.style.opacity = 0;
 sec_d.style.opacity = 1;
+sec_c.style.height = "1px";
+document.getElementById("hide_procede_tp_payment_btn").style.opacity = 0;
+document.getElementById("hide_procede_tp_payment_btn_1").style.opacity = 0;
+document.getElementById("hide_procede_tp_payment_btn_2").style.backgroundColor = "red";
+document.getElementById("hide_procede_tp_payment_btn_2").style.color = "white";
+document.getElementById("hide_procede_tp_payment_btn_2").style.border = "3px solid black";
+
+
+
+
+if ( document.getElementById("transaction_id").value == ``||null) {
+    alert("please enter Transaction id without this information Order is not conform please fill form again with filled transaction ID")}
+ 
+
 }
 
     </script>
