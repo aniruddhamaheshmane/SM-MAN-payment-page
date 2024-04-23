@@ -29,8 +29,7 @@
           padding: 10px;
           
            gap: 10px;
-           background-color: rgb(27, 13, 13);
-           color: aliceblue;
+          
            font-size: 20px;
 font-weight: 1000;
         }
@@ -41,8 +40,7 @@ font-weight: 1000;
             padding: 10px;
           
            gap: 50px;
-           background-color: rgb(0, 0, 0);
-           color: aliceblue;
+      
            font-size: 20px;
 font-weight: 1000;
         }
@@ -52,8 +50,7 @@ font-weight: 1000;
             padding: 10px;
           
            gap: 10px;
-           background-color: rgb(0, 0, 0);
-           color: aliceblue;
+    
            font-size: 10px;
 font-weight: 1000;
         }
@@ -63,8 +60,7 @@ font-weight: 1000;
             padding: 10px;
             gap: 10px;
           
-           background-color: rgb(0, 0, 0);
-           color: aliceblue;
+      
            font-size: 20px;
 font-weight: 1000;
         }
@@ -81,13 +77,28 @@ font-weight: 1000;
         .button{
             height: 40px;
             width: 35vh;
-            background-color: rgb(237, 175, 175);
-            color: rgb(0, 0, 0);
-            border: 3px solid white;
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            border: 3px solid rgb(194, 147, 119);
             padding: 2px;
             font-weight: 100;
+            margin-top: 3px;
             font: bold;
         }
+
+        .big_font{
+font-size: 15px;
+background-color: rgb(6, 255, 255);
+border: 2px solid;
+padding: 4px;
+        }
+        #qr_info{
+           
+
+border: 2px solid;
+padding: 4px;
+        }
+    
     </style>
 </head>
 <body>
@@ -113,7 +124,8 @@ font-weight: 1000;
 
 <div id="section_B">
     <select name="" id="product-name" onchange="alert(this.options[this.selectedIndex].text)">
-   <option  value="85" >ESSA underwere 90CM </option>
+        <option  value="00" >select product</option>
+        <option  value="85" >ESSA underwere 90CM </option>
    <option  value="90">ESSA underwere 95CM</option>
    <option class="pn"  value="90">ESSA underwere 100CM</option>
 
@@ -162,7 +174,7 @@ font-weight: 1000;
 <!-- <p id="demo"></p> -->
 <p id="qr_info">B</p>
 <img id="qr" src="qr.jpg" alt="">
-<p>enter transactiion id last 4 digit<input id="transaction_id" value="" type="text"></p>
+<p class="big_font">enter transactiion id last 4 digit<input id="transaction_id" value="" type="text"></p>
 <BUtton class="button"  onclick="section_C()">submit payment data and previwe </BUtton>
 </div>
 
@@ -235,11 +247,15 @@ let name_product_name = select.options[select.selectedIndex].text ; //returns th
 let transactionid = document.getElementById("transaction_id").value
 
 
-document.getElementById("qr_info").innerHTML = ` one ${name_product_name} prize is = ${ONE_PRODUCT_PRIZE} 
+document.getElementById("qr_info").innerHTML = `<h1>Product Payment summary </h1>
+<br>
+one ${name_product_name} prize is = ${ONE_PRODUCT_PRIZE} 
   <br>
-   get discount is 20%
+   get discount is = 20%
    <br>
-   total ${output2} product prise is ${output1 * output2} `;
+<h2>total ${output2} product prise is =${output1 * output2}</h2>
+
+    `;
 
 
    sec_c.style.opacity = 1;
@@ -268,13 +284,15 @@ let name_product_name = select.options[select.selectedIndex].text ; //returns th
 
 
 document.getElementById("final-peiv").innerHTML = 
-  `Name of custemer = ${name_of_custemer.value} <br> address=${full_address.value} <br> ${name_product_name} 
+  `<h1>order final bill </h1>  
+  <br><line>
+  Name of custemer = ${name_of_custemer.value} <br> address = ${full_address.value} <br> ${name_product_name} 
   <br>
-  one ${select.options[select.selectedIndex].text}prize is = ${ONE_PRODUCT_PRIZE} 
+  one ${select.options[select.selectedIndex].text} prize is = ${ONE_PRODUCT_PRIZE} 
   <br>
-   get discount is 20%
+   get discount is = 20%
    <br>
-   total ${output2} product prise is ${output1 * output2} <br>
+   total ${output2} product prise is = ${output1 * output2} <br>
    transaction id = ${transactionid}`;
 
 
