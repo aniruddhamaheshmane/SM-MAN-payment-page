@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+         
+        }
+        #a1{
+          opacity: 1;
+        }
+
+        #product-quntity,#get-bill,#product-name{
+            opacity: 1;
+        }
+        #qr{
+            height: 200px;
+            width: 200px;
+            opacity: 1;
+        }
+
+        #section_A{
+            border: 2PX solid rgb(255, 0, 0);
+            opacity: 1;
+          padding: 10px;
+           display: flex;
+           gap: 10px;
+           background-color: rgb(27, 13, 13);
+           color: aliceblue;
+           font-size: 20px;
+font-weight: 1000;
+        }
+        #section_B{
+            border: 2PX solid rgb(255, 0, 0);
+            border: 2PX solid;
+            opacity: 0;
+            padding: 10px;
+           display: flex;
+           gap: 50px;
+           background-color: rgb(0, 0, 0);
+           color: aliceblue;
+           font-size: 20px;
+font-weight: 1000;
+        }
+        #section_C{
+            border: 2PX solid rgb(255, 0, 0);
+            opacity: 0;
+            padding: 10px;
+           display: flex;
+           gap: 10px;
+           background-color: rgb(0, 0, 0);
+           color: aliceblue;
+           font-size: 10px;
+font-weight: 1000;
+        }
+        #section_D{
+            border: 2PX solid red;
+            opacity: 0;
+            padding: 10px;
+            gap: 10px;
+           display: flex;
+           background-color: rgb(0, 0, 0);
+           color: aliceblue;
+           font-size: 20px;
+font-weight: 1000;
+        }
+        #name,#address{
+            padding: 5px;
+        }
+
+        option{
+            padding: 5px;
+            height: 20px;
+            width: 20px;
+        }
+
+        .button{
+            height: 40px;
+            width: 35vh;
+            background-color: rgb(237, 175, 175);
+            color: rgb(0, 0, 0);
+            border: 3px solid white;
+            padding: 2px;
+            font-weight: 100;
+            font: bold;
+        }
+    </style>
+</head>
+<body>
+
+
+<body>
+
+<div id="section_A">
+    <p>name:- <input  id="name" type="text"></p>
+
+    <p>address:- <select name="" id="">
+ <option value="select city">select city</option>
+<option value="rahimatpur">rahimatpur</option>
+<option value="boriv">boriv</option>
+<option value="neharwadi">neharvadi</option>
+    </select>
+
+    <p>full address- <input id="address" type="text"></p></p>
+
+    <button class="button" onclick="section_A()">"submit persanal information"</button>
+</div>
+
+
+<div id="section_B">
+    <select name="" id="product-name" onchange="alert(this.options[this.selectedIndex].text)">
+   <option  value="85" >ESSA underwere 90CM </option>
+   <option  value="90">ESSA underwere 95CM</option>
+   <option class="pn"  value="90">ESSA underwere 100CM</option>
+
+
+   <option value="95">LUX underwere 90CM</option>
+   <option value="100">LUX underwere 95CM</option>
+   <option value="110">LUX underwere 100CM</option>
+
+   <option value="105">MATCGO underwere 90CM</option>
+   <option value="115">MATCHO underwere 95CM</option>
+   <option value="120">MATCHO underwere 100CM</option>
+
+   <option value="100">LUX white banel 90CM</option>
+   <option value="100">LUX white banel 95CM</option>
+   <option value="100">LUX white banel 100CM</option>
+
+   <option value="100">LUX colour banel 90CM</option>
+   <option value="100">LUX colour banel 95CM</option>
+   <option value="100">LUX colour banel 100CM</option>
+
+   <option value="100">LUX white-lining banel 90CM</option>
+   <option value="100">LUX white lining banel 95CM</option>
+   <option value="100">LUX white lining banel 100CM</option>
+
+   <option value="100">MATCGO banel 90CM</option>
+   <option value="100">MATCHO banel 95CM</option>
+   <option value="101">MATCHO banel 100CM</option>
+
+</select>
+
+<select name="" id="product-quntity">
+    <option id="a1" value="4">4  pieces</option>
+    <option value="5">5  pieces</option>
+    <option value="6">6  pieces</option>
+    <option value="8">8  pieces</option>
+    <option value="12">12  pieces</option>
+</select>
+
+<button class="button"  onclick="section_B()">procede to payment</button>
+
+</div>
+
+
+
+<div id="section_C">
+<!-- <p id="demo"></p> -->
+<p id="qr_info">B</p>
+<img id="qr" src="qr.jpg" alt="">
+<p>enter transactiion id last 4 digit<input id="transaction_id" value="" type="text"></p>
+<BUtton class="button"  onclick="section_C()">submit payment data and previwe </BUtton>
+</div>
+
+<div id="section_D">
+    <p id="final-peiv"></p>
+    <button class="button"  id="get-bill">click submit via whatsap</button>
+</div>
+
+
+
+
+
+
+
+    <script>
+
+let sec_a =document.getElementById("section_A");
+let sec_b =document.getElementById("section_B");
+let sec_c =document.getElementById("section_C");
+let sec_d =document.getElementById("section_D");
+let full_address = document.getElementById("address");
+let name_of_custemer = document.getElementById("name");
+
+
+
+
+
+   function section_A() {
+
+if ( document.getElementById("name").value == ``||null) {
+    alert("please enter name without this information not conform order")}
+    if(document.getElementById("address").value == ``|| null)
+    {
+    alert("please enter full addres without this information not conform order")}
+    else{
+    document.getElementById("name").disabled = true;
+    document.getElementById("address").disabled = true};
+
+
+    alert( document.getElementById("name").value + " your name and addres is save please order product"+  " " + "minimum orde quntity is 4 ,5, 8 , 12 pieces")
+   
+  sec_b.style.opacity = 1;
+  
+
+}
+
+   
+
+
+
+
+function section_B(){
+
+    let name_of_custemer = document.getElementById("name").value;
+    let full_address = document.getElementById("address").value;
+
+
+            selectElement = document.querySelector('#product-name');
+            output1 = selectElement.value;
+   
+            selectElement = document.querySelector('#product-quntity');
+            output2 = selectElement.value;
+
+//   document.getElementById("final-bill").innerHTML = output1 * output2 ;
+  let ONE_PRODUCT_PRIZE = output1 * output2 / output2;
+
+  let select = document.getElementById("product-name");
+let name_product_name = select.options[select.selectedIndex].text ; //returns the entire select with all the options
+  
+let transactionid = document.getElementById("transaction_id").value
+
+
+document.getElementById("qr_info").innerHTML = ` one ${name_product_name} prize is = ${ONE_PRODUCT_PRIZE} 
+  <br>
+   get discount is 20%
+   <br>
+   total ${output2} product prise is ${output1 * output2} `;
+
+
+   sec_c.style.opacity = 1;
+   
+};
+
+function section_C(){
+   
+    document.getElementById("qr").style.opacity = 1;
+
+    selectElement = document.querySelector('#product-name');
+            output1 = selectElement.value;
+   
+            selectElement = document.querySelector('#product-quntity');
+            output2 = selectElement.value;
+
+//   document.getElementById("final-bill").innerHTML = output1 * output2 ;
+  let ONE_PRODUCT_PRIZE = output1 * output2 / output2;
+
+  let select = document.getElementById("product-name");
+let name_product_name = select.options[select.selectedIndex].text ; //returns the entire select with all the options
+ let transactionid = document.getElementById("transaction_id").value;
+      
+
+
+
+
+document.getElementById("final-peiv").innerHTML = 
+  `Name of custemer = ${name_of_custemer.value} <br> address=${full_address.value} <br> ${name_product_name} 
+  <br>
+  one ${select.options[select.selectedIndex].text}prize is = ${ONE_PRODUCT_PRIZE} 
+  <br>
+   get discount is 20%
+   <br>
+   total ${output2} product prise is ${output1 * output2} <br>
+   transaction id = ${transactionid}`;
+
+
+sec_d.style.opacity = 1;
+}
+
+    </script>
+</body>
+</html>
