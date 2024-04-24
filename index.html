@@ -25,11 +25,12 @@
             opacity: 1;
         }
 
+
         #section_A{
             border: 2PX solid rgb(252, 45, 30);
             opacity: 1;
           padding: 10px;
-          
+         
            gap: 10px;
           
            font-size: 20px;
@@ -61,8 +62,6 @@ font-weight: 1000;
             opacity: 0;
             padding: 10px;
             gap: 10px;
-          
-      
            font-size: 20px;
 font-weight: 1000;
         }
@@ -110,17 +109,32 @@ padding: 4px;
         color: rgb(255, 255, 255);
         font-weight: 1000;
     }
+    .sec_d_element{
+display: flex;
+    }
+    #submit_btn{
+        height: 40px;
+            width: 35vh;
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            border: 3px solid rgb(194, 147, 119);
+            padding: 2px;
+            font-weight: 1000;
+            margin-top: 3px;
+            font: bold;
+    }
     </style>
 </head>
-<body>
+<body id="body">
 
 
 <body>
-
+<div id="div">
 <div id="section_A">
+    <div>
     <p>name:- <input  id="name" type="text"></p>
 
-    <p>address:- <select name="" id="">
+    <p>address:- <select name="" id="addres_add">
  <option value="select city">select city</option>
 <option value="rahimatpur">rahimatpur</option>
 <option value="boriv">boriv</option>
@@ -130,11 +144,12 @@ padding: 4px;
     <p>full address- <input id="address" type="text"></p></p>
 
     <button id="hide_procede_tp_payment_btn_1" class="button" onclick="section_A()">"submit persanal information"</button>
+
 </div>
-
-
+</div>
+</div>
 <div id="section_B">
-    <select name="" id="product-name" onchange="alert(`${name_of_custemer.value} you select  ${this.options[this.selectedIndex].text} is conform to proceed `)">
+    <select name="" id="product-name" onchange="alert(`${document.getElementById(`name`).value} you select  ${this.options[this.selectedIndex].text} is conform to proceed `)">
         <option  value="00" >select product</option>
         <option  value="85" >ESSA underwere 90CM </option>
    <option  value="90">ESSA underwere 95CM</option>
@@ -181,6 +196,10 @@ padding: 4px;
 
 
 
+
+
+
+
 <div id="section_C">
 <!-- <p id="demo"></p> -->
 <p id="qr_info">B</p>
@@ -189,26 +208,27 @@ padding: 4px;
 <BUtton class="button"  onclick="section_C()">submit payment data and previwe </BUtton>
 </div>
 
+
+
 <div id="section_D">
+   <div class="sec_d_element"> <p>name of custemer :- </p><P id="name_of_custemer"></P></div>
+   <div class="sec_d_element"> <p>Address NEAR BY :- </p><P id="Address_NEAR_BY"></P></div>
+   <div class="sec_d_element"> <p>product name :- </p><P id="product_name"></P></div>
+   <div class="sec_d_element"> <p>get_discount :- </p><P id="get_discount"></P></div>
+
+   <div class="sec_d_element"> <p>product quantity :- </p><P id="product_quantity"></P></div>
+   <div class="sec_d_element"> <p>one product_prise :- </p><P id="one_product_prise"></P></div>
+   <div class="sec_d_element"> <p>total :- </p><P id="total_product_prize"></P></div>
+   <div class="sec_d_element"> <p>transaction ID :- </p><P id="transaction_ID"></P></div>
+ 
+
+    <!-- <button   class="button" id="hide_procede_tp_payment_btn_2" id="get-bill" >click submit via whatsap</button> -->
    
-
- <P id="name_of_custemer"></P>
- <P id="Address_NEAR_BY"></P>
- 
- <P id="product_name"></P>
- <P id="product_quantity"></P>
- 
- <P id="one_product_prise"></P>
- <P id="get_discount"></P>
- 
- <P id="total_product_prize"></P>
- <P id="transaction_ID"></P>
-    <button   class="button" id="hide_procede_tp_payment_btn_2" id="get-bill" >click submit via whatsap</button>
-
 </div>
 
-<p id="final-peivb">99999</p>
-<button onclick="gotowhatsapp()"></button>
+<p id="final-peivb"></p>
+<button id="submit_btn" onclick="gotowhatsapp()">click to Submit  </button>
+
 
 
 
@@ -228,19 +248,37 @@ let full_address = document.getElementById("address");
 
    function section_A() {
 
+    let name_of_custemer_a = document.getElementById("name").value;
+
 if ( document.getElementById("name").value == ``||null) {
-    alert("please enter name without this information not conform order")}
+    alert(`${"ptriy grahak"} please enter name without this information not conform order`)
+    document.getElementById("name").style.backgroundColor = "red"
+
+};
+    
     if(document.getElementById("address").value == ``|| null)
-    {
-    alert("please enter full addres without this information not conform order")}
+    {alert(`${name_of_custemer_a} please enter full addres without this information not conform order`)
+    document.getElementById("address").style.backgroundColor = "red"
+
+}
+    
+    if(
+        document.getElementById("addres_add").value == "select city" || ``|| null
+    ){alert(`${name_of_custemer_a} please select city option without this information not conform order`)
+    document.getElementById("addres_add").style.backgroundColor = "red"
+
+}
+
     else{
     document.getElementById("name").disabled = true;
-    document.getElementById("address").disabled = true};
-
-
-    alert( document.getElementById("name").value +" "+"Thank you" + " your name and addres is save ; please fill product details")
-   
+    document.getElementById("address").disabled = true
+    document.getElementById("addres_add").disabled = true;
+    alert( document.getElementById("name").value +" "+"Thank you" + " your name and addres is save ; please fill product details");
   sec_b.style.opacity = 1;
+};
+
+
+   
   
 
 }
@@ -248,9 +286,13 @@ if ( document.getElementById("name").value == ``||null) {
    
 
 
-
-
 function section_B(){
+
+    sec_a.style.opacity = 0;
+sec_b.style.opacity = 0;
+
+document.getElementById("product-name").disabled = true;
+
 
     let name_of_custemer = document.getElementById("name").value;
     let full_address = document.getElementById("address").value;
@@ -275,7 +317,7 @@ document.getElementById("qr_info").innerHTML = `<h1>Product Payment summary </h1
 <br>
     product name = ${name_product_name}
   <br>
-  get discount is = 20%
+  get product discount is = 20%
   <br>
     product quantity = ${output2}
   <br>
@@ -287,9 +329,14 @@ one ${name_product_name} prize is = ${ONE_PRODUCT_PRIZE}
 
     `;
 
-
+    // sec_a.style.opacity = 0;
+    // sec_b.style.opacity = 0;
+    sec_a.style.width= "0px";
+    sec_b.style.width = "0px";
+    sec_a.style.height= "0px";
+    sec_b.style.height = "0px";
    sec_c.style.opacity = 1;
-  
+ 
    alert(`${name_of_custemer} you order is = ${name_product_name}
     get discount is = 20% 
     one ${name_product_name} prize is = ${ONE_PRODUCT_PRIZE}
@@ -342,21 +389,33 @@ let name_product_name = select.options[select.selectedIndex].text ; //returns th
    document.getElementById("total_product_prize").innerHTML =`${output2} product prise is = ${output1 * output2}`;
 document.getElementById("transaction_ID").innerHTML =`XXXXXXXX${transactionid}`;
 
-   sec_c.style.opacity = 0;
-sec_d.style.opacity = 1;
-sec_c.style.height = "1px";
+ 
 document.getElementById("hide_procede_tp_payment_btn").style.opacity = 0;
 document.getElementById("hide_procede_tp_payment_btn_1").style.opacity = 0;
-document.getElementById("hide_procede_tp_payment_btn_2").style.backgroundColor = "red";
-document.getElementById("hide_procede_tp_payment_btn_2").style.color = "white";
-document.getElementById("hide_procede_tp_payment_btn_2").style.border = "3px solid black";
+// document.getElementById("hide_procede_tp_payment_btn_2").style.backgroundColor = "red";
+// document.getElementById("hide_procede_tp_payment_btn_2").style.color = "white";
+// document.getElementById("hide_procede_tp_payment_btn_2").style.border = "3px solid black";
 
 
 
-if ( document.getElementById("transaction_id").value == ``||null) {
-    alert("please enter Transaction id without this information Order is not conform please fill form again with filled transaction ID")}
- 
-
+if ( document.getElementById("transaction_id").value == ``||null)
+ {
+    alert("please enter Transaction id without this information Order is not conform please fill form again with filled transaction ID")
+section_b()
+}else{
+    sec_a.style.height = "2px";
+    sec_b.style.height = "2px";
+    sec_c.style.height = "2px";
+    sec_c.style.opacity = 0;
+sec_d.style.opacity = 1;
+}
+setInterval(() => {
+  
+  document.getElementById("submit_btn").style.backgroundColor = "rgb(235, 69, 57)"
+}, 1000);
+setInterval(() => {  
+  document.getElementById("submit_btn").style.backgroundColor = "rgb(84, 57, 235)"
+}, 2000);
 };
 
 
@@ -375,25 +434,18 @@ let transaction_ID = document.getElementById("transaction_ID").innerHTML;
 
 var url = "https://wa.me/9834926132?text="
 
-+ "name_of_custemer :-" + name_of_custemer + "%0a"
++ "custemer name :-" + name_of_custemer + "%0a"
 + "address:- " + Address_NEAR_BY + "%0a"
-+ "product_name:- " + product_name + "%0a"
++ "product name:- " + product_name + "%0a"
 + "product quantity:- " + product_quantity + "%0a"
 + "One" + one_product_prise + "%0a"
-+ "get_discount:- " + get_discount + "%0a"
++ "get discount:- " + get_discount + "%0a"
 + "" + total_product_prize + "%0a"
 + "   transaction_ID:- " +    transaction_ID + "%0a"
 
 window.open(url, '_blank').focus();
     }
  
-
-
-
-
-
-
-
     </script>
 </body>
 </html>
