@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -190,7 +191,7 @@ padding: 4px;
 
 <div id="section_D">
     <p id="final-peiv"></p>
-    <button class="button" id="hide_procede_tp_payment_btn_2" id="get-bill">click submit via whatsap</button>
+    <button class="button" id="hide_procede_tp_payment_btn_2" id="get-bill" >click submit via whatsap</button>
 </div>
 
 
@@ -286,11 +287,11 @@ one ${name_product_name} prize is = ${ONE_PRODUCT_PRIZE}
 
 
 setInterval(() => {
-   console.log("a")
+  
     document.getElementById("colour_change").style.backgroundColor = "rgb(235, 69, 57)"
 }, 1000);
 setInterval(() => {
-   console.log("a")
+  
     document.getElementById("colour_change").style.backgroundColor = "rgb(84, 57, 235)"
 }, 2000);
 
@@ -353,7 +354,25 @@ if ( document.getElementById("transaction_id").value == ``||null) {
     alert("please enter Transaction id without this information Order is not conform please fill form again with filled transaction ID")}
  
 
+};
+let element = document.getElementById("hide_procede_tp_payment_btn_2");
+element.addEventListener("click", myFunction);
+
+
+    function myFunction() {
+    
+    var name = "123";
+ 
+
+    var url = "https://wa.me/919834926132?text=" 
+    + "Name: " + name + "%0a"
+   
+
+    window.open(url, '_blank').focus();
 }
+
+
+
 
     </script>
 </body>
