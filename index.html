@@ -190,11 +190,25 @@ padding: 4px;
 </div>
 
 <div id="section_D">
-    <p id="final-peiv"></p>
-    <button class="button" id="hide_procede_tp_payment_btn_2" id="get-bill" >click submit via whatsap</button>
+   
+
+ <P id="name_of_custemer"></P>
+ <P id="Address_NEAR_BY"></P>
+ 
+ <P id="product_name"></P>
+ <P id="product_quantity"></P>
+ 
+ <P id="one_product_prise"></P>
+ <P id="get_discount"></P>
+ 
+ <P id="total_product_prize"></P>
+ <P id="transaction_ID"></P>
+    <button   class="button" id="hide_procede_tp_payment_btn_2" id="get-bill" >click submit via whatsap</button>
+
 </div>
 
-
+<p id="final-peivb">99999</p>
+<button onclick="gotowhatsapp()"></button>
 
 
 
@@ -207,7 +221,6 @@ let sec_b =document.getElementById("section_B");
 let sec_c =document.getElementById("section_C");
 let sec_d =document.getElementById("section_D");
 let full_address = document.getElementById("address");
-let name_of_custemer = document.getElementById("name");
 
 
 
@@ -317,26 +330,17 @@ let name_product_name = select.options[select.selectedIndex].text ; //returns th
  let transactionid = document.getElementById("transaction_id").value;
       
 
+ let name_of_custemer = document.getElementById("name").value;
 
 
-
-document.getElementById("final-peiv").innerHTML = 
-  `<h1>order final bill </h1>  
-  <br><line>
-  Name of custemer = ${name_of_custemer.value} 
-  <br>
-   address = ${full_address.value}
-    <br>
-    product name = ${name_product_name} 
-    <br>
-    product quantity = ${output2}
-  <br>
-  one ${select.options[select.selectedIndex].text} prize is = ${ONE_PRODUCT_PRIZE} 
-  <br>
-   get discount is = 20%
-   <br>
-   total ${output2} product prise is = ${output1 * output2} <br>
-   transaction id = XXXXXXXX${transactionid}`;
+   document.getElementById("name_of_custemer").innerHTML = `${name_of_custemer}`;
+   document.getElementById("Address_NEAR_BY").innerHTML =`${full_address.value}`;
+   document.getElementById("product_name").innerHTML =`${name_product_name} `;
+   document.getElementById("product_quantity").innerHTML =`${output2}`;
+   document.getElementById("one_product_prise").innerHTML =` ${select.options[select.selectedIndex].text} prize is = ${ONE_PRODUCT_PRIZE} `;
+   document.getElementById("get_discount").innerHTML =`20%`;
+   document.getElementById("total_product_prize").innerHTML =`${output2} product prise is = ${output1 * output2}`;
+document.getElementById("transaction_ID").innerHTML =`XXXXXXXX${transactionid}`;
 
    sec_c.style.opacity = 0;
 sec_d.style.opacity = 1;
@@ -349,27 +353,43 @@ document.getElementById("hide_procede_tp_payment_btn_2").style.border = "3px sol
 
 
 
-
 if ( document.getElementById("transaction_id").value == ``||null) {
     alert("please enter Transaction id without this information Order is not conform please fill form again with filled transaction ID")}
  
 
 };
-let element = document.getElementById("hide_procede_tp_payment_btn_2");
-element.addEventListener("click", myFunction);
 
 
-    function myFunction() {
-    
-    var name = "123";
+
+
+
+function gotowhatsapp() {
+let name_of_custemer = document.getElementById("name_of_custemer").innerHTML; 
+let Address_NEAR_BY =  document.getElementById("Address_NEAR_BY").innerHTML;
+  let product_name = document.getElementById("product_name").innerHTML ;
+  let product_quantity = document.getElementById("product_quantity").innerHTML ;
+   let one_product_prise =document.getElementById("one_product_prise").innerHTML ;
+   let get_discount = document.getElementById("get_discount").innerHTML ;
+   let total_product_prize  = document.getElementById("total_product_prize").innerHTML ;
+let transaction_ID = document.getElementById("transaction_ID").innerHTML;
+
+var url = "https://wa.me/9834926132?text="
+
++ "name_of_custemer :-" + name_of_custemer + "%0a"
++ "address:- " + Address_NEAR_BY + "%0a"
++ "product_name:- " + product_name + "%0a"
++ "product quantity:- " + product_quantity + "%0a"
++ "One" + one_product_prise + "%0a"
++ "get_discount:- " + get_discount + "%0a"
++ "" + total_product_prize + "%0a"
++ "   transaction_ID:- " +    transaction_ID + "%0a"
+
+window.open(url, '_blank').focus();
+    }
  
 
-    var url = "https://wa.me/919834926132?text=" 
-    + "Name: " + name + "%0a"
-   
 
-    window.open(url, '_blank').focus();
-}
+
 
 
 
