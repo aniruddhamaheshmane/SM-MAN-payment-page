@@ -39,7 +39,7 @@ font-weight: 1000;
         #section_B{
             border: 2PX solid rgb(255, 0, 0);
             border: 2PX solid;
-            opacity: 0;
+            opacity: 1;
             padding: 10px;
           
            gap: 50px;
@@ -49,7 +49,7 @@ font-weight: 1000;
         }
         #section_C{
             border: 2PX solid rgb(255, 0, 0);
-            opacity: 0;
+            opacity: 1;
             padding: 10px;
           
            gap: 10px;
@@ -59,7 +59,7 @@ font-weight: 1000;
         }
         #section_D{
             border: 2PX solid red;
-            opacity: 0;
+            opacity: 1;
             padding: 10px;
             gap: 10px;
            font-size: 20px;
@@ -214,7 +214,7 @@ display: flex;
    <div class="sec_d_element"> <p>name of custemer :- </p><P id="name_of_custemer"></P></div>
    <div class="sec_d_element"> <p>Address NEAR BY :- </p><P id="Address_NEAR_BY"></P></div>
    <div class="sec_d_element"> <p>product name :- </p><P id="product_name"></P></div>
-   <div class="sec_d_element"> <p>get_discount :- </p><P id="get_discount"></P></div>
+   <div class="sec_d_element"> <p>get discount :- </p><P id="get_discount"></P></div>
 
    <div class="sec_d_element"> <p>product quantity :- </p><P id="product_quantity"></P></div>
    <div class="sec_d_element"> <p>one product_prise :- </p><P id="one_product_prise"></P></div>
@@ -222,13 +222,13 @@ display: flex;
    <div class="sec_d_element"> <p>transaction ID :- </p><P id="transaction_ID"></P></div>
  
 
-    <!-- <button   class="button" id="hide_procede_tp_payment_btn_2" id="get-bill" >click submit via whatsap</button> -->
+    <button onclick="gotowhatsapp()"   class="button" id="hide_procede_tp_payment_btn_2" id="get-bill" >click submit via whatsap</button>
    
 </div>
 
 <p id="final-peivb"></p>
-<button id="submit_btn" onclick="gotowhatsapp()">click to Submit  </button>
-
+<button id="submit_btn"  onclick="gotowhatsapp()">click to Submit  </button>
+<button onclick="gotowhatsapp()">n</button>
 
 
 
@@ -288,8 +288,8 @@ if ( document.getElementById("name").value == ``||null) {
 
 function section_B(){
 
-    sec_a.style.opacity = 0;
-sec_b.style.opacity = 0;
+    sec_a.style.opacity = 1;
+sec_b.style.opacity = 1;
 
 document.getElementById("product-name").disabled = true;
 
@@ -331,10 +331,10 @@ one ${name_product_name} prize is = ${ONE_PRODUCT_PRIZE}
 
     // sec_a.style.opacity = 0;
     // sec_b.style.opacity = 0;
-    sec_a.style.width= "0px";
-    sec_b.style.width = "0px";
-    sec_a.style.height= "0px";
-    sec_b.style.height = "0px";
+    // sec_a.style.width= "0px";
+    // sec_b.style.width = "0px";
+    // sec_a.style.height= "0px";
+    // sec_b.style.height = "0px";
    sec_c.style.opacity = 1;
  
    alert(`${name_of_custemer} you order is = ${name_product_name}
@@ -382,16 +382,16 @@ let name_product_name = select.options[select.selectedIndex].text ; //returns th
 
    document.getElementById("name_of_custemer").innerHTML = `${name_of_custemer}`;
    document.getElementById("Address_NEAR_BY").innerHTML =`${full_address.value}`;
-   document.getElementById("product_name").innerHTML =`${name_product_name} `;
+   document.getElementById("product_name").innerHTML =`${name_product_name}`;
    document.getElementById("product_quantity").innerHTML =`${output2}`;
-   document.getElementById("one_product_prise").innerHTML =` ${select.options[select.selectedIndex].text} prize is = ${ONE_PRODUCT_PRIZE} `;
+   document.getElementById("one_product_prise").innerHTML =`${select.options[select.selectedIndex].text} prize is = ${ONE_PRODUCT_PRIZE} `;
    document.getElementById("get_discount").innerHTML =`20%`;
    document.getElementById("total_product_prize").innerHTML =`${output2} product prise is = ${output1 * output2}`;
 document.getElementById("transaction_ID").innerHTML =`XXXXXXXX${transactionid}`;
 
  
-document.getElementById("hide_procede_tp_payment_btn").style.opacity = 0;
-document.getElementById("hide_procede_tp_payment_btn_1").style.opacity = 0;
+document.getElementById("hide_procede_tp_payment_btn").style.opacity = 1;
+document.getElementById("hide_procede_tp_payment_btn_1").style.opacity = 1;
 // document.getElementById("hide_procede_tp_payment_btn_2").style.backgroundColor = "red";
 // document.getElementById("hide_procede_tp_payment_btn_2").style.color = "white";
 // document.getElementById("hide_procede_tp_payment_btn_2").style.border = "3px solid black";
@@ -403,10 +403,10 @@ if ( document.getElementById("transaction_id").value == ``||null)
     alert("please enter Transaction id without this information Order is not conform please fill form again with filled transaction ID")
 section_b()
 }else{
-    sec_a.style.height = "2px";
-    sec_b.style.height = "2px";
-    sec_c.style.height = "2px";
-    sec_c.style.opacity = 0;
+    // sec_a.style.height = "2px";
+    // sec_b.style.height = "2px";
+    // sec_c.style.height = "2px";
+    sec_c.style.opacity = 1;
 sec_d.style.opacity = 1;
 }
 setInterval(() => {
@@ -422,7 +422,7 @@ setInterval(() => {
 
 
 
-function gotowhatsapp() {
+function gotowhatsapp(){
 let name_of_custemer = document.getElementById("name_of_custemer").innerHTML; 
 let Address_NEAR_BY =  document.getElementById("Address_NEAR_BY").innerHTML;
   let product_name = document.getElementById("product_name").innerHTML ;
@@ -432,16 +432,17 @@ let Address_NEAR_BY =  document.getElementById("Address_NEAR_BY").innerHTML;
    let total_product_prize  = document.getElementById("total_product_prize").innerHTML ;
 let transaction_ID = document.getElementById("transaction_ID").innerHTML;
 
-var url = "https://wa.me/9834926132?text="
 
+
+var url = "https://wa.me/919834926132?text="
 + "custemer name :-" + name_of_custemer + "%0a"
 + "address:- " + Address_NEAR_BY + "%0a"
 + "product name:- " + product_name + "%0a"
 + "product quantity:- " + product_quantity + "%0a"
 + "One" + one_product_prise + "%0a"
-+ "get discount:- " + get_discount + "%0a"
-+ "" + total_product_prize + "%0a"
-+ "   transaction_ID:- " +    transaction_ID + "%0a"
++ "get discount:- " + `20%` + "%0a"
++ "" + total_product_prize + "RS" + "%0a"
++ "XXXXXXX"+ transaction_ID + "%0a"
 
 window.open(url, '_blank').focus();
     }
