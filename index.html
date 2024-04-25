@@ -33,7 +33,8 @@
             border: 2PX solid rgb(252, 45, 30);
             opacity: 1;
           padding: 10px;
-         
+         /* background-color: rgb(228, 162, 81); */
+/* background-color: rgb(215, 235, 177); */
            gap: 10px;
           
            font-size: 20px;
@@ -97,20 +98,27 @@ font-size: 15px;
 background-color: rgb(6, 255, 255);
 border: 2px solid;
 padding: 4px;
+border: 2px solid black;
+color: rgb(0, 0, 0);
         }
-        #qr_info{
-           
-
-border: 2px solid;
-padding: 4px;
-        }
+  #qr_info_all_data{
+    border: 2px solid black;
+    padding: 5px;
+  }
+        #qr_info_2{
+        background-color: rgb(235, 84, 84);
+           border: 1px solid black;
+           padding: 4px;
+           color: rgb(255, 255, 255);
+           font-weight: 900;
+                   }
         #transaction_id{
             height: 20px;
             padding: 5px;
             margin-left: 5px;
         }
     #colour_change{
-        color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
         font-weight: 1000;
     }
     .sec_d_element{
@@ -142,6 +150,28 @@ font-size: 10px;
      background-color: brown;
      display: flex;
     } */
+    #section_A>P{
+        font-size: 15PX;
+    }
+    #addres_add,#product-quntity,#product-name{
+        height: 30PX;
+        background-color: rgb(198, 237, 237);
+        margin-top: 2PX;
+        margin-bottom: 2PX;
+border: 1 px solid black;
+    }
+    #product-name>option{
+        border: 1px solid black;
+    }
+    .main_hedding{
+        display: flex;
+        border: 0.1px solid black;
+    
+       align-items: center;
+       justify-content: center;
+       text-align: center;
+       font-size: 20px;
+    }
     </style>
 </head>
 <body id="body">
@@ -151,19 +181,19 @@ font-size: 10px;
   
 <div >
 <div  id="section_A">
-  
-    <p >name:- <input id="name" type="text"></p>
+    <div class="main_hedding" id="section_A_h">-Personal Details-</div>
+    <p>Name:- <input id="name" type="text"></p>
 
-    <p  >address:- <select   name=""  id="addres_add">
+    <p  >Address:- <select   name=""  id="addres_add">
  <option value="select city">select city</option>
-<option value="rahimatpur">rahimatpur</option>
-<option value="boriv">boriv</option>
-<option value="neharwadi">neharvadi</option>
+<option value="rahimatpur">Rahimatpur</option>
+<option value="boriv">Boriv</option>
+<option value="neharwadi">Neharvadi</option>
     </select>
 
-    <p >full address- <input id="address" type="text"></p></p>
+    <p >Full Address- <input id="address" type="text"></p></p>
 <div>
-    <button  id="hide_procede_tp_payment_btn_1"  class="button" onclick="section_A()">"submit persanal information"</button>
+    <button  id="hide_procede_tp_payment_btn_1"  class="button" onclick="section_A()">Submit personal information</button>
 
 </div>
 
@@ -178,36 +208,41 @@ font-size: 10px;
 
 
 <div id="section_B" >
+    <div class="main_hedding" id="section_B_h"></div>
     <select  name="" id="product-name" onchange="alert(`${document.getElementById(`name`).value} you select  ${this.options[this.selectedIndex].text} is conform to proceed `)">
-        <option  value="00" >select product</option>
-        <option  value="85" >ESSA underwere 90CM </option>
-   <option  value="90">ESSA underwere 95CM</option>
-   <option class="pn"  value="90">ESSA underwere 100CM</option>
+        <option  value="00" >Select Product</option>
 
+        <option value="15">Checks Multi-Color RUMAL</option>
+        <option value="21">Checks White-Color RUMAL</option>
 
-   <option value="95">LUX underwere 90CM</option>
-   <option value="100">LUX underwere 95CM</option>
-   <option value="110">LUX underwere 100CM</option>
+        
+        <option  value="85" >ESSA Cotton Innerwear 90 CM </option>
+   <option  value="90">ESSA Cotton Innerwear 95 CM</option>
+   <option class="pn"  value="90">ESSA Cotton Innerwear 100 CM</option>
 
-   <option value="105">MATCGO underwere 90CM</option>
-   <option value="115">MATCHO underwere 95CM</option>
-   <option value="120">MATCHO underwere 100CM</option>
+   <option value="95">LUX Cotton Innerwear 90 CM</option>
+   <option value="100">LUX Cotton Innerwear 95 CM</option>
+   <option value="110">LUX Cotton Innerwear 100 CM</option>
 
-   <option value="100">LUX white banel 90CM</option>
-   <option value="100">LUX white banel 95CM</option>
-   <option value="100">LUX white banel 100CM</option>
+   <option value="105">Macho Cotton Innerwear  90 CM</option>
+   <option value="115">Macho Cotton Innerwear 95 CM</option>
+   <option value="120">Macho Cotton Innerwear 100 CM</option>
 
-   <option value="100">LUX colour banel 90CM</option>
-   <option value="100">LUX colour banel 95CM</option>
-   <option value="100">LUX colour banel 100CM</option>
+   <option value="100">LUX white vest/Banyan 90 CM</option>
+   <option value="100">LUX white vest/Banyan 95 CM</option>
+   <option value="100">LUX white vest/Banyan 100 CM</option>
 
-   <option value="100">LUX white-lining banel 90CM</option>
-   <option value="100">LUX white lining banel 95CM</option>
-   <option value="100">LUX white lining banel 100CM</option>
+   <option value="100">LUX colour vest/Banyan 90 CM</option>
+   <option value="100">LUX colour vest/Banyan 95 CM</option>
+   <option value="100">LUX colour vest/Banyan 100 CM</option>
 
-   <option value="100">MATCGO banel 90CM</option>
-   <option value="100">MATCHO banel 95CM</option>
-   <option value="101">MATCHO banel 100CM</option>
+   <option value="100">LUX white-lining vest/Banyan 90 CM</option>
+   <option value="100">LUX white-lining vest/Banyan 95 CM</option>
+   <option value="100">LUX white-lining vest/Banyan 100 CM</option>
+
+   <option value="100">Macho vest/Banyan 90 CM</option>
+   <option value="100">Macho vest/Banyan 95 CM</option>
+   <option value="101">Macho vest/Banyan 100 CM</option>
 
 </select>
 
@@ -219,20 +254,23 @@ font-size: 10px;
     <option value="12">12  pieces</option>
 </select>
 
-<button  class="button" id="hide_procede_tp_payment_btn" onclick="section_B()">procede to payment</button>
+<button  class="button" id="hide_procede_tp_payment_btn" onclick="section_B()">Procede To Payment</button>
 
 </div>
 
 <div  id="section_C">
+<div id="qr_info_all_data">
+    <p id="qr_info" ></p>
+<p id="qr_info_2" ></p>
+</div>
 
-<p id="qr_info" >B</p>
+</p>
 <div >
-  
     <img id="qr"  src="qr.jpg"  alt="">
 </div>
 
 <p  id="colour_change" class="big_font">enter transactiion id last 4 digit<input  id="transaction_id" value="" type="text"></p>
-<BUtton class="button"  onclick="section_C()">submit payment data and previwe </BUtton>
+<BUtton class="button"  onclick="section_C()">preview And Submit Payment data </BUtton>
 </div>
 
 
@@ -240,6 +278,7 @@ font-size: 10px;
 
 
 <div id="section_D">
+    <p class="main_hedding" id="section_D_h"></p>
    <div class="sec_d_element"> <p>name of custemer :- </p><P id="name_of_custemer"></P></div>
    <div class="sec_d_element"> <p>Address NEAR BY :- </p><P id="Address_NEAR_BY"></P></div>
    <div class="sec_d_element"> <p>product name :- </p><P id="product_name"></P></div>
@@ -251,7 +290,7 @@ font-size: 10px;
    <div class="sec_d_element"> <p>transaction ID :- </p><P id="transaction_ID"></P></div>
  
 
-    <button onclick="gotowhatsapp()"   class="button"  id="get-bill" >click submit via whatsap</button>
+    <button onclick="gotowhatsapp()"   class="button"  id="get-bill" >Click submit @ whatsapp</button>
    
 </div>
 
@@ -274,33 +313,39 @@ let full_address = document.getElementById("address");
    function section_A() {
 
     let name_of_custemer_a = document.getElementById("name").value;
+    // let name_of_custemer_a_2_9 = parseInt(document.getElementById("name").value);
+    document.getElementById("section_B_h").innerHTML = `-${name_of_custemer_a } select product -`;
 
-if ( document.getElementById("name").value == ``||null) {
+// console.log(name_of_custemer_a_2_9 )
+
+
+
+
+ if ( document.getElementById("name").value == ``|| null) {
     alert(`${"ptriy grahak"} please enter name without this information not conform order`)
     document.getElementById("name").style.backgroundColor = "red"
-
-};
-    
-    if(document.getElementById("address").value == ``|| null)
+    window.location.reload()
+}
+ 
+   else if(document.getElementById("address").value == ``|| null)
     {alert(`${name_of_custemer_a} please enter full addres without this information not conform order`)
     document.getElementById("address").style.backgroundColor = "red"
-
+window.location.reload()
 }
     
-    if(
+  else if(
         document.getElementById("addres_add").value == "select city" || ``|| null
     ){alert(`${name_of_custemer_a} please select city option without this information not conform order`)
     document.getElementById("addres_add").style.backgroundColor = "red"
-
+    window.location.reload()
 }
 
     else{
     document.getElementById("name").disabled = true;
     document.getElementById("address").disabled = true
     document.getElementById("addres_add").disabled = true;
-    alert( document.getElementById("name").value +" "+"Thank you" + " your name and addres is save ; please fill product details");
+    // alert( document.getElementById("name").value +" "+"Thank you" + " your name and addres is save ; please fill product details");
   sec_b.style.opacity = 1;
- 
 };
 
 
@@ -358,13 +403,10 @@ document.getElementById("qr_info").innerHTML = `<h1>Product Payment summary </h1
     product quantity = ${output2}
   <br>
 one ${name_product_name} prize is = ${ONE_PRODUCT_PRIZE} 
-  
-  
-   <br>
-<h2>total ${output2} product prise is =${output1 * output2}</h2>
+
 
     `;
-
+    document.getElementById("qr_info_2").innerHTML =`<h2>total ${output2} product prise is =${output1 * output2}</h2>`;
 
    sec_c.style.opacity = 1;
  
@@ -376,14 +418,15 @@ one ${name_product_name} prize is = ${ONE_PRODUCT_PRIZE}
     scan following QR code to payment = ${output1 * output2}
     and node down the payment transaction id last 4 digit`)
 
-
+         /* background-color: rgb(228, 162, 81); */
+/* background-color: rgb(215, 235, 177); */
 setInterval(() => {
   
-    document.getElementById("colour_change").style.backgroundColor = "rgb(235, 69, 57)"
+    document.getElementById("colour_change").style.backgroundColor = "rgb(228, 162, 81)"
 }, 1000);
 setInterval(() => {
   
-    document.getElementById("colour_change").style.backgroundColor = "rgb(84, 57, 235)"
+    document.getElementById("colour_change").style.backgroundColor = " rgb(215, 235, 177)"
 }, 2000);
 
 document.getElementById("hide_procede_tp_payment_btn_1").disabled = true;
@@ -407,7 +450,6 @@ document.getElementById("product-quntity").disabled = true;
 // document.querySelector(".a12").classList.add("small");
 // };
 
-
 }
 
 
@@ -420,7 +462,10 @@ document.getElementById("product-quntity").disabled = true;
 
 
 function section_C(){
-   
+    let name_of_custemer_a = document.getElementById("name").value;
+
+    document.getElementById("section_D_h").innerHTML = `-${name_of_custemer_a} yout order details -`;
+
     document.getElementById("qr").style.opacity = 1;
 
     selectElement = document.querySelector('#product-name');
@@ -502,14 +547,14 @@ let transaction_ID = document.getElementById("transaction_ID").innerHTML;
 
 
 var url = "https://wa.me/919834926132?text="
-+ "custemer name :-" + name_of_custemer + "%0a"
-+ "address:- " + Address_NEAR_BY + "%0a"
-+ "product name:- " + product_name + "%0a"
-+ "product quantity:- " + product_quantity + "%0a"
-+ "One" + one_product_prise + "%0a"
-+ "get discount:- " + `20%` + "%0a"
-+ "" + total_product_prize + "RS" + "%0a"
-+ "XXXXXXX"+ transaction_ID + "%0a"
++ "custemer name :-" + name_of_custemer + "%0a" + "%0a"
++ "address:- " + Address_NEAR_BY + "%0a" + "%0a"
++ "product name:- " + product_name + "%0a" + "%0a"
++ "product quantity:- " + product_quantity + "%0a" + "%0a"
++ "One" + one_product_prise + "%0a" + "%0a"
++ "get discount:- " + `20%` + "%0a" + "%0a"
++ "" + total_product_prize + "RS" + "%0a" + "%0a"
++ "XXXXXXX"+ transaction_ID + "%0a" + "%0a"
 
 window.open(url, '_blank').focus();
     }
