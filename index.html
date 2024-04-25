@@ -12,9 +12,9 @@
             padding: 0;
          
         }
-        #a1{
+        /* #a1{
           opacity: 1;
-        }
+        } */
 
         #product-quntity,#get-bill,#product-name{
             opacity: 1;
@@ -25,6 +25,9 @@
             opacity: 1;
         }
 
+        /* #section_A>p,input ,#hide_procede_tp_payment_btn_1{
+    height: 0px;
+        } */
 
         #section_A{
             border: 2PX solid rgb(252, 45, 30);
@@ -39,7 +42,7 @@ font-weight: 1000;
         #section_B{
             border: 2PX solid rgb(255, 0, 0);
             border: 2PX solid;
-            opacity: 1;
+            opacity: 0;
             padding: 10px;
           
            gap: 50px;
@@ -49,7 +52,7 @@ font-weight: 1000;
         }
         #section_C{
             border: 2PX solid rgb(255, 0, 0);
-            opacity: 1;
+            opacity: 0;
             padding: 10px;
           
            gap: 10px;
@@ -59,7 +62,7 @@ font-weight: 1000;
         }
         #section_D{
             border: 2PX solid red;
-            opacity: 1;
+            opacity: 0;
             padding: 10px;
             gap: 10px;
            font-size: 20px;
@@ -87,6 +90,7 @@ font-weight: 1000;
             margin-top: 3px;
             font: bold;
         }
+      
 
         .big_font{
 font-size: 15px;
@@ -123,33 +127,57 @@ display: flex;
             margin-top: 3px;
             font: bold;
     }
+   
+    /* .small{
+      height: 0px;
+      width: 0px;
+   font-size: 0px;
+   background-color: brown;
+   display: flex;
+    }
+    .imgsmall{
+     height: 1px;
+     width: 1px;
+     background-color: brown;
+     display: flex;
+    } */
     </style>
 </head>
 <body id="body">
 
 
 <body>
-<div id="div">
-<div id="section_A">
-    <div>
-    <p>name:- <input  id="name" type="text"></p>
+  
+<div >
+<div class="a1"  id="section_A">
+  
+    <p class="a2">name:- <input class="a3"  id="name" type="text"></p>
 
-    <p>address:- <select name="" id="addres_add">
+    <p class="a4" >address:- <select class="a5"  name=""  id="addres_add">
  <option value="select city">select city</option>
 <option value="rahimatpur">rahimatpur</option>
 <option value="boriv">boriv</option>
 <option value="neharwadi">neharvadi</option>
     </select>
 
-    <p>full address- <input id="address" type="text"></p></p>
+    <p class="a6">full address- <input class="a7" id="address" type="text"></p></p>
+<div>
+    <button class="a8" id="hide_procede_tp_payment_btn_1"  class="button" onclick="section_A()">"submit persanal information"</button>
 
-    <button id="hide_procede_tp_payment_btn_1" class="button" onclick="section_A()">"submit persanal information"</button>
+</div>
+
 
 </div>
+
 </div>
-</div>
-<div id="section_B">
-    <select name="" id="product-name" onchange="alert(`${document.getElementById(`name`).value} you select  ${this.options[this.selectedIndex].text} is conform to proceed `)">
+
+
+
+
+
+
+<div id="section_B" class="a9">
+    <select class="a10" name="" id="product-name" onchange="alert(`${document.getElementById(`name`).value} you select  ${this.options[this.selectedIndex].text} is conform to proceed `)">
         <option  value="00" >select product</option>
         <option  value="85" >ESSA underwere 90CM </option>
    <option  value="90">ESSA underwere 95CM</option>
@@ -182,7 +210,7 @@ display: flex;
 
 </select>
 
-<select name="" id="product-quntity">
+<select name="" class="a11" id="product-quntity">
     <option id="a1" value="4">4  pieces</option>
     <option value="5">5  pieces</option>
     <option value="6">6  pieces</option>
@@ -190,23 +218,23 @@ display: flex;
     <option value="12">12  pieces</option>
 </select>
 
-<button class="button" id="hide_procede_tp_payment_btn" onclick="section_B()">procede to payment</button>
+<button class="a12" class="button" id="hide_procede_tp_payment_btn" onclick="section_B()">procede to payment</button>
 
 </div>
 
+<div class="a17" id="section_C">
 
-
-
-
-
-
-<div id="section_C">
-<!-- <p id="demo"></p> -->
-<p id="qr_info">B</p>
-<img id="qr" src="qr.jpg" alt="">
-<p id="colour_change" class="big_font">enter transactiion id last 4 digit<input id="transaction_id" value="" type="text"></p>
-<BUtton class="button"  onclick="section_C()">submit payment data and previwe </BUtton>
+<p id="qr_info" class="a13">B</p>
+<div class="a19">
+  
+    <img id="qr" class="a14" src="qr.jpg"  alt="">
 </div>
+
+<p class="a15" id="colour_change" class="big_font">enter transactiion id last 4 digit<input class="a18" id="transaction_id" value="" type="text"></p>
+<BUtton class="a16" class="button"  onclick="section_C()">submit payment data and previwe </BUtton>
+</div>
+
+
 
 
 
@@ -222,13 +250,9 @@ display: flex;
    <div class="sec_d_element"> <p>transaction ID :- </p><P id="transaction_ID"></P></div>
  
 
-    <button onclick="gotowhatsapp()"   class="button" id="hide_procede_tp_payment_btn_2" id="get-bill" >click submit via whatsap</button>
+    <button onclick="gotowhatsapp()"   class="button"  id="get-bill" >click submit via whatsap</button>
    
 </div>
-
-<p id="final-peivb"></p>
-<button id="submit_btn"  onclick="gotowhatsapp()">click to Submit  </button>
-<button onclick="gotowhatsapp()">n</button>
 
 
 
@@ -278,19 +302,29 @@ if ( document.getElementById("name").value == ``||null) {
 };
 
 
-   
-  
 
 }
+
+
+
+
+
+
 
    
 
 
 function section_B(){
 
-    sec_a.style.opacity = 1;
-sec_b.style.opacity = 1;
+ 
 
+    sec_a.style.opacity = 1;
+    sec_b.style.opacity = 1;
+    sec_a.style.width= "0px";
+    sec_b.style.width = "0px";
+    sec_a.style.height= "0px";
+    sec_b.style.height = "0px";
+    
 document.getElementById("product-name").disabled = true;
 
 
@@ -329,12 +363,7 @@ one ${name_product_name} prize is = ${ONE_PRODUCT_PRIZE}
 
     `;
 
-    // sec_a.style.opacity = 0;
-    // sec_b.style.opacity = 0;
-    // sec_a.style.width= "0px";
-    // sec_b.style.width = "0px";
-    // sec_a.style.height= "0px";
-    // sec_b.style.height = "0px";
+
    sec_c.style.opacity = 1;
  
    alert(`${name_of_custemer} you order is = ${name_product_name}
@@ -355,10 +384,32 @@ setInterval(() => {
     document.getElementById("colour_change").style.backgroundColor = "rgb(84, 57, 235)"
 }, 2000);
 
+document.getElementById("hide_procede_tp_payment_btn_1").disabled = true;
+document.getElementById("hide_procede_tp_payment_btn").disabled = true;
+document.getElementById("product-quntity").disabled = true;
 
 
-};
 
+
+// document.querySelector(".a1").classList.add("small");
+// document.querySelector(".a2").classList.add("small");
+// document.querySelector(".a3").classList.add("small");
+// document.querySelector(".a4").classList.add("small");
+// document.querySelector(".a5").classList.add("small");
+// document.querySelector(".a6").classList.add("small");
+// document.querySelector(".a7").classList.add("small");
+// document.querySelector(".a8").classList.add("small");
+// document.querySelector(".a9").classList.add("small");
+// document.querySelector(".a10").classList.add("small");
+// document.querySelector(".a11").classList.add("small");
+// document.querySelector(".a12").classList.add("small");
+// };
+
+const elementA = document.getElementById("section_A");
+elementA.remove();
+const elementB = document.getElementById("section_B");
+elementB.remove();
+}
 function section_C(){
    
     document.getElementById("qr").style.opacity = 1;
@@ -405,17 +456,21 @@ section_b()
 }else{
     // sec_a.style.height = "2px";
     // sec_b.style.height = "2px";
-    // sec_c.style.height = "2px";
+    sec_c.style.height = "2px";
     sec_c.style.opacity = 1;
 sec_d.style.opacity = 1;
 }
 setInterval(() => {
   
-  document.getElementById("submit_btn").style.backgroundColor = "rgb(235, 69, 57)"
+  document.getElementById("get-bill").style.backgroundColor = "rgb(235, 69, 57)"
 }, 1000);
 setInterval(() => {  
-  document.getElementById("submit_btn").style.backgroundColor = "rgb(84, 57, 235)"
+  document.getElementById("get-bill").style.backgroundColor = "rgb(84, 57, 235)"
 }, 2000);
+
+
+const elementC = document.getElementById("section_C");
+elementC.remove();
 };
 
 
@@ -447,6 +502,13 @@ var url = "https://wa.me/919834926132?text="
 window.open(url, '_blank').focus();
     }
  
+
+
+
+
+
+
+
     </script>
 </body>
 </html>
