@@ -284,7 +284,7 @@ border: 1 px solid black;
 <div id="section_D">
     <p class="main_hedding" id="section_D_h"></p>
     <BR>
-        <div class="sec_d_element"> <p>name of custemer :- </p><P class="STAR">*</P><P id="name_of_custemer"></P><P class="STAR">*</P></div>
+        <div class="sec_d_element"> <p>name of custemer :- </p><P id="name_of_custemer"></P></div>
         <BR>
             <div class="sec_d_element"> <p>Villege Name :- </p><P id="addres_add_se"></P></div>
 <br>
@@ -522,16 +522,16 @@ se = document.querySelector('#addres_add');
             document.getElementById("addres_add_se").innerHTML = output3
             console.log(output3)
 
-   document.getElementById("name_of_custemer").innerHTML = ` *${name_of_custemer}* `;
-   document.getElementById("addres_add").innerHTML = ` *${output3}* `;
-   document.getElementById("Address_NEAR_BY").innerHTML =` *${full_address.value}* `;
-   document.getElementById("product_name").innerHTML =` *${name_product_name}* `;
-   document.getElementById("product_quantity").innerHTML =` *${output2}* `;
-   document.getElementById("one_product_prise").innerHTML =`${select.options[select.selectedIndex].text} prize is = *${ONE_PRODUCT_PRIZE} RS*`;
+   document.getElementById("name_of_custemer").innerHTML = ` ${name_of_custemer} `;
+   document.getElementById("addres_add").innerHTML = ` ${output3} `;
+   document.getElementById("Address_NEAR_BY").innerHTML =` ${full_address.value}`;
+   document.getElementById("product_name").innerHTML =` ${name_product_name} `;
+   document.getElementById("product_quantity").innerHTML =` ${output2} `;
+   document.getElementById("one_product_prise").innerHTML =` ${select.options[select.selectedIndex].text} prize is = *${ONE_PRODUCT_PRIZE} RS `;
    document.getElementById("get_discount").innerHTML =`20%`;
    document.getElementById("total_product_prize").innerHTML =`${output2} product prise is = *${output1 * output2} RS*`;
-document.getElementById("transaction_ID").innerHTML =`*XXXXX${transactionid}*`;
-document.getElementById("date").innerHTML = ` *${new Date}* `;
+document.getElementById("transaction_ID").innerHTML =` XXXXX${transactionid} `;
+document.getElementById("date").innerHTML = ` ${new Date} `;
 
  
 document.getElementById("hide_procede_tp_payment_btn").style.opacity = 1;
@@ -594,16 +594,16 @@ let transaction_ID = document.getElementById("transaction_ID").innerHTML;
 
 
 var url = "https://wa.me/919834926132?text="
-+ "custemer name :-" + name_of_custemer + "%0a" + "%0a"
++ "*" +" "+"custemer name :-" + name_of_custemer + " " +"*" + "%0a" + "%0a"
 +"Name of villege :-" + " " + addres_add +  "%0a" + "%0a"
-+ "address:- " + Address_NEAR_BY + "%0a" + "%0a"
++ "*" +" "+ "address:- " + Address_NEAR_BY +" "+ "*"+ "%0a" + "%0a"
 + "product name:- " + product_name + "%0a" + "%0a"
 + "product quantity:- " + product_quantity + "%0a" + "%0a"
-+ "One" + " " +"*"+ one_product_prise + "*"+ "%0a" + "%0a"
++ "*" +" "+"ONE"+ one_product_prise +" "+ "*"+ "%0a" + "%0a"
 + "get discount:- " + `20%` + "%0a" + "%0a"
-+ "TOTAL" + "*"+ total_product_prize  + "*"+ "%0a" + "%0a"
-+" date = "+ " " + new Date +  "%0a" + "%0a"
-+"Transaction id = " + " "+ "XXXXXXX"+ transaction_ID + "%0a" + "%0a"
++ "*" + " "+ "TOTAL"  +  total_product_prize  + " " +"*" + "%0a" + "%0a"
++"date = "+ " " + new Date +  "%0a" + "%0a"
++"*"+ " "+ "Transaction id :-" +  "XXXXXXX"+ transaction_ID  + " "+ "*" + "%0a" + "%0a"
 
 window.open(url, '_blank').focus();
     }
