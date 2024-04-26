@@ -94,7 +94,9 @@ font-weight: 1000;
             font: bold;
         }
       
-
+.STAR{
+    color: rgb(255, 255, 255);
+}
         .big_font{
 font-size: 15px;
 background-color: rgb(6, 255, 255);
@@ -282,7 +284,7 @@ border: 1 px solid black;
 <div id="section_D">
     <p class="main_hedding" id="section_D_h"></p>
     <BR>
-        <div class="sec_d_element"> <p>name of custemer :- </p><P id="name_of_custemer"></P></div>
+        <div class="sec_d_element"> <p>name of custemer :- </p><P class="STAR">*</P><P id="name_of_custemer"></P><P class="STAR">*</P></div>
         <BR>
             <div class="sec_d_element"> <p>Villege Name :- </p><P id="addres_add_se"></P></div>
 <br>
@@ -326,7 +328,7 @@ let full_address = document.getElementById("address");
 
     let name_of_custemer_a = document.getElementById("name").value;
     // let name_of_custemer_a_2_9 = parseInt(document.getElementById("name").value);
-    document.getElementById("section_B_h").innerHTML = `-${name_of_custemer_a } select product -`;
+    document.getElementById("section_B_h").innerHTML = `- ${name_of_custemer_a } select product -`;
 
 
 // console.log(name_of_custemer_a_2_9 )
@@ -338,20 +340,20 @@ se = document.querySelector('#addres_add');
 
 
  if ( document.getElementById("name").value == ``|| null) {
-    alert(`${"ptriy grahak"} please enter name without this information not conform order`)
+    alert(`${"ptriy grahak"} please enter name; without this information order is not confirmed `)
     document.getElementById("name").style.backgroundColor = "red"
     window.location.reload()
 }
  
    else if(document.getElementById("address").value == ``|| null)
-    {alert(`${name_of_custemer_a} please enter full addres without this information not conform order`)
+    {alert(`${name_of_custemer_a} please enter full address; without this information order is not confirmed `)
     document.getElementById("address").style.backgroundColor = "red"
 window.location.reload()
 }
     
   else if(
         document.getElementById("addres_add").value == "select city" || ``|| null
-    ){alert(`${name_of_custemer_a} please select city option without this information not conform order`)
+    ){alert(`${name_of_custemer_a} please select villege option; without this information order is not confirmed `)
     document.getElementById("addres_add").style.backgroundColor = "red"
     window.location.reload()
 }
@@ -422,7 +424,7 @@ let transactionid = document.getElementById("transaction_id").value;
 
 
 
-document.getElementById("qr_info").innerHTML = `<h1>Product Payment summary </h1>
+document.getElementById("qr_info").innerHTML = `<h1> Product Payment summary </h1>
 <br>
     product name = ${name_product_name}
   <br>
@@ -430,18 +432,19 @@ document.getElementById("qr_info").innerHTML = `<h1>Product Payment summary </h1
   <br>
     product quantity = ${output2}
   <br>
-one ${name_product_name} prize is = ${ONE_PRODUCT_PRIZE} `;
-    document.getElementById("qr_info_2").innerHTML =`<h2>total ${output2} product prise is =${output1 * output2}</h2>`;
+one ${name_product_name} prize is = ${ONE_PRODUCT_PRIZE} RS`;
+    document.getElementById("qr_info_2").innerHTML =`<h2>total ${output2} product prise is = ${output1 * output2} RS</h2>`;
 
    sec_c.style.opacity = 1;
  
-   alert(`${name_of_custemer} you order is = ${name_product_name}
+   alert(`${name_of_custemer} 
+   you order is = ${name_product_name}
     get discount is = 20% 
-    one ${name_product_name} prize is = ${ONE_PRODUCT_PRIZE}
+    one ${name_product_name} prize is = ${ONE_PRODUCT_PRIZE} RS
     product quantity = ${output2}
-    total ${output2} product prise is =${output1 * output2}
-    scan following QR code to payment = ${output1 * output2}
-    and node down the payment transaction id last 4 digit`)
+    total ${output2} product prise is = ${output1 * output2} RS
+    scan following QR code and  pay = ${output1 * output2} RS
+    after payment note down the last 4 digits of transaction id`)
 
          /* background-color: rgb(228, 162, 81); */
 /* background-color: rgb(215, 235, 177); */
@@ -489,7 +492,7 @@ document.getElementById("product-quntity").disabled = true;
 function section_C(){
     let name_of_custemer_a = document.getElementById("name").value;
 
-    document.getElementById("section_D_h").innerHTML = `-${name_of_custemer_a} your order details -`;
+    document.getElementById("section_D_h").innerHTML = `- ${name_of_custemer_a} your order details -`;
 
     document.getElementById("qr").style.opacity = 1;
 
@@ -524,9 +527,9 @@ se = document.querySelector('#addres_add');
    document.getElementById("Address_NEAR_BY").innerHTML =`${full_address.value}`;
    document.getElementById("product_name").innerHTML =`${name_product_name}`;
    document.getElementById("product_quantity").innerHTML =`${output2}`;
-   document.getElementById("one_product_prise").innerHTML =`${select.options[select.selectedIndex].text} prize is = ${ONE_PRODUCT_PRIZE} `;
+   document.getElementById("one_product_prise").innerHTML =`${select.options[select.selectedIndex].text} prize is = ${ONE_PRODUCT_PRIZE} RS`;
    document.getElementById("get_discount").innerHTML =`20%`;
-   document.getElementById("total_product_prize").innerHTML =`${output2} product prise is = ${output1 * output2}`;
+   document.getElementById("total_product_prize").innerHTML =`${output2} product prise is = ${output1 * output2} RS`;
 document.getElementById("transaction_ID").innerHTML =`XXXXX${transactionid}`;
 document.getElementById("date").innerHTML = new Date;
 
@@ -541,7 +544,7 @@ document.getElementById("hide_procede_tp_payment_btn_1").style.opacity = 1;
 
 if ( document.getElementById("transaction_id").value == ``||null)
  {
-    alert("please enter Transaction id without this information Order is not conform please fill form again with filled transaction ID")
+    alert("Please enter Transaction id ;without this information Order is not confirmed .")
 section_b()
 }else{
     // sec_a.style.height = "2px";
@@ -592,15 +595,15 @@ let transaction_ID = document.getElementById("transaction_ID").innerHTML;
 
 var url = "https://wa.me/919834926132?text="
 + "custemer name :-" + name_of_custemer + "%0a" + "%0a"
-+"Name of villege"+ addres_add +  "%0a" + "%0a"
++"Name of villege" + addres_add +  "%0a" + "%0a"
 + "address:- " + Address_NEAR_BY + "%0a" + "%0a"
 + "product name:- " + product_name + "%0a" + "%0a"
 + "product quantity:- " + product_quantity + "%0a" + "%0a"
-+ "One" + one_product_prise + "%0a" + "%0a"
++ "One" + one_product_prise + "RS" + "%0a" + "%0a"
 + "get discount:- " + `20%` + "%0a" + "%0a"
 + "" + total_product_prize + "RS" + "%0a" + "%0a"
-+""+   new Date +  "%0a" + "%0a"
-+ "XXXXXXX"+ transaction_ID + "%0a" + "%0a"
++" date = "+ " " + new Date +  "%0a" + "%0a"
++"Transaction id = " + " "+ "XXXXXXX"+ transaction_ID + "%0a" + "%0a"
 
 window.open(url, '_blank').focus();
     }
