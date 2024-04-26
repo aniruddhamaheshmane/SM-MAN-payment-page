@@ -575,22 +575,7 @@ const elementC = document.getElementById("section_C");
 elementC.remove();
 };
 
-
-
-
-
-function gotowhatsapp(){
-let name_of_custemer = document.getElementById("name_of_custemer").innerHTML; 
-let addres_add =  document.getElementById("addres_add_se").innerHTML;
-
-let Address_NEAR_BY =  document.getElementById("Address_NEAR_BY").innerHTML;
-  let product_name = document.getElementById("product_name").innerHTML ;
-  let product_quantity = document.getElementById("product_quantity").innerHTML ;
-   let one_product_prise =document.getElementById("one_product_prise").innerHTML ;
-   let get_discount = document.getElementById("get_discount").innerHTML ;
-   let total_product_prize  = document.getElementById("total_product_prize").innerHTML ;
-let transaction_ID = document.getElementById("transaction_ID").innerHTML;
-      const tomorrow = () => { 
+let tomorrow = () => { 
       
       // Creating the date instance 
       let d = new Date(); 
@@ -613,6 +598,22 @@ let transaction_ID = document.getElementById("transaction_ID").innerHTML;
       // Printing the present date 
       console.log(`${day}-${month}-${year}`); 
   } ;
+
+  tomorrow()
+
+function gotowhatsapp(){
+let name_of_custemer = document.getElementById("name_of_custemer").innerHTML; 
+let addres_add =  document.getElementById("addres_add_se").innerHTML;
+
+let Address_NEAR_BY =  document.getElementById("Address_NEAR_BY").innerHTML;
+  let product_name = document.getElementById("product_name").innerHTML ;
+  let product_quantity = document.getElementById("product_quantity").innerHTML ;
+   let one_product_prise =document.getElementById("one_product_prise").innerHTML ;
+   let get_discount = document.getElementById("get_discount").innerHTML ;
+   let total_product_prize  = document.getElementById("total_product_prize").innerHTML ;
+let transaction_ID = document.getElementById("transaction_ID").innerHTML;
+      
+
     
 
 
@@ -627,7 +628,7 @@ var url = "https://wa.me/919834926132?text="
 + "get discount:- " + `20%` + "%0a" + "%0a"
 +  "TOTAL"  +  total_product_prize  +  "%0a" + "%0a"
 +"date = "+ " " + new Date +  "%0a" + "%0a"
-+"date = "+ " " + new Date +  "%0a"+"Product delivery :-" +   tomorrow()  + "%0a"   
++"Transaction id = "+ " " + transaction_ID +  "%0a" + "%0a"
 
 
 window.open(url, '_blank').focus();
