@@ -527,9 +527,9 @@ se = document.querySelector('#addres_add');
    document.getElementById("Address_NEAR_BY").innerHTML =` ${full_address.value}`;
    document.getElementById("product_name").innerHTML =` ${name_product_name} `;
    document.getElementById("product_quantity").innerHTML =` ${output2} `;
-   document.getElementById("one_product_prise").innerHTML =` ${select.options[select.selectedIndex].text} prize is = *${ONE_PRODUCT_PRIZE} RS `;
+   document.getElementById("one_product_prise").innerHTML =` ${select.options[select.selectedIndex].text} prize is = ${ONE_PRODUCT_PRIZE} RS `;
    document.getElementById("get_discount").innerHTML =`20%`;
-   document.getElementById("total_product_prize").innerHTML =`${output2} product prise is = *${output1 * output2} RS*`;
+   document.getElementById("total_product_prize").innerHTML =`${output2} product prise is = ${output1 * output2} RS`;
 document.getElementById("transaction_ID").innerHTML =` XXXXX${transactionid} `;
 document.getElementById("date").innerHTML = ` ${new Date} `;
 
